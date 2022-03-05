@@ -1,0 +1,68 @@
+#initial condition
+* 93e81e3 (HEAD -> feature12, origin/feature12) feature12 done
+* 9daaa0c create feature 12
+| * 2f4378a (origin/feature11, feature11) buat ui feature 11
+| * 56c72cb buat backend feature 11
+| * d6dd8ef buat feature 11
+|/  
+* a9f20dd (origin/main, origin/HEAD, main) ubah status
+_____________________________________________________________________
+
+#feature 12 accidentally merge to main
+
+*   bf703d7 (HEAD -> main, origin/main, origin/HEAD) Merge branch 'feature12'
+|\  
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+| * 2f4378a (origin/feature11, feature11) buat ui feature 11
+| * 56c72cb buat backend feature 11
+| * d6dd8ef buat feature 11
+|/  
+* a9f20dd ubah status
+_____________________________________________________________________
+
+# feature 11 is still in development so need to syncronize to main with rebase
+
+* 41a5349 (HEAD -> feature11, origin/feature11) buat ui feature 11
+* 9ab09eb buat backend feature 11
+* 6457d01 buat feature 11
+*   bf703d7 (origin/main, origin/HEAD, main) Merge branch 'feature12'
+|\  
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+* a9f20dd ubah status
+_____________________________________________________________________
+
+# feature11 commit some thing
+
+* 9a2ef31 (HEAD -> feature11, origin/feature11) add some thing
+* 41a5349 buat ui feature 11
+* 9ab09eb buat backend feature 11
+* 6457d01 buat feature 11
+*   bf703d7 (origin/main, origin/HEAD, main) Merge branch 'feature12'
+|\  
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+* a9f20dd ubah status
+_____________________________________________________________________
+
+#feature 12 should not merge to main !! how to make it
+
+git reset --hard a9f20dd
+git switch main
+git rebase --onto main feature12 feature11
+
+and it will become
+
+* a0506f8 (origin/feature11, feature11) add some thing
+* 287cd18 buat ui feature 11
+* 101b2a2 buat backend feature 11
+* c8d4c93 buat feature 11
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+* a9f20dd (HEAD -> main, origin/main, origin/HEAD) ubah status
+
