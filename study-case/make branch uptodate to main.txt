@@ -1,0 +1,42 @@
+#initial point
+
+* 7d95696 (HEAD -> main, origin/main, origin/HEAD) add study-case folder
+| * a0506f8 (origin/feature11, feature11) add some thing
+| * 287cd18 buat ui feature 11
+| * 101b2a2 buat backend feature 11
+| * c8d4c93 buat feature 11
+|/  
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+* a9f20dd ubah status
+_____________________________________________________________________
+
+# keep feature11 & feature12 uptodate
+
+git switch feature11
+git rebase main
+
+* 20de821 (HEAD -> feature11, origin/feature11) add some thing
+* 2d9afef buat ui feature 11
+* a9777cd buat backend feature 11
+* f862612 buat feature 11
+* 7d95696 (origin/main, origin/HEAD, main) add study-case folder
+| * 93e81e3 (origin/feature12, feature12) feature12 done
+| * 9daaa0c create feature 12
+|/  
+* a9f20dd ubah status
+
+
+git switch feature12
+git rebase main
+
+* 823a132 (HEAD -> feature12, origin/feature12) feature12 done
+* b8e1289 create feature 12
+| * 20de821 (origin/feature11, feature11) add some thing
+| * 2d9afef buat ui feature 11
+| * a9777cd buat backend feature 11
+| * f862612 buat feature 11
+|/  
+* 7d95696 (origin/main, origin/HEAD, main) add study-case folder
+* a9f20dd ubah status
